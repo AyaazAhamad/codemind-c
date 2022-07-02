@@ -1,24 +1,24 @@
 #include<stdio.h>
-int factors(int num)
-{
-    int k=0,i;
-    for(i=1;i<=num;i++)
-    {
-        if(num%i==0)
-        {
-            k++;
-        }
-    }
-    return k;
-}
+#include<math.h>
 int main()
 {
-    int n,m,i,j,c=0,k;
-    scanf("%d%d",&n,&m);
-    for(i=n;i<=m;i++)
+    int a,b,i,j,count=0,c=0;
+    scanf("%d%d",&a,&b);
+    if(a==1)
     {
-        k=factors(i);
-        if(k==2)
+        a=2;
+    }
+    for(i=a;i<=b;i++)
+    {
+        count=0;
+        for(j=2;j<=sqrt(i);j++)
+        {
+            if(i%j==0)
+            {
+                count++;
+            }
+        }
+        if(count==0)
         {
             printf("%d
 ",i);
