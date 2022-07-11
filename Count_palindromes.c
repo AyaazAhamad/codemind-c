@@ -1,34 +1,23 @@
 #include<stdio.h>
-int palin(int num)
-{
-    int m,r=0,d;
-    m=num;
-    while(num!=0)
-    {
-        d=num%10;
-        num=num/10;
-        r=r*10+d;
-    }
-    if(r==m)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
 int main()
 {
-    int n,i,c=0,arr[100];
+    int n,a[100],r,i,rev,ori,c=0;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&a[i]);
     }
     for(i=0;i<n;i++)
     {
-        if(palin(arr[i]))
+        ori=a[i];
+        rev=0;
+        while(a[i])
+        {
+            r=a[i]%10;
+            a[i]=a[i]/10;
+            rev=rev*10+r;
+        }
+        if(rev==ori)
         {
             c++;
         }
