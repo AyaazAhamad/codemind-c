@@ -1,27 +1,27 @@
 #include<stdio.h>
-int reverse(int num)
+int pal(int);
+int pal(int a)
 {
-    int m,r=0,d;
-    m=num;
-    while(num!=0)
+    int num,rem,rev=0;
+    num=a;
+    while(a!=0)
     {
-        d=num%10;
-        num=num/10;
-        r=r*10+d;
+        rem=a%10;
+        rev=rev*10+rem;
+        a/=10;
     }
-    return r;
+    return rev;
 }
 int main()
 {
-    int n,i,c=0,arr[100],r;
+    int n,a[100],i,c=0;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&a[i]);
     }
     for(i=0;i<n;i++)
     {
-        r=(reverse(arr[i]));
-        printf("%d ",r);
+        printf("%d ",pal(a[i]));
     }
 }
