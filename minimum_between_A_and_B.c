@@ -1,49 +1,32 @@
 #include<stdio.h>
 int main()
 {
-    int n,a[100],s[100];
+    int n,p,q,a[100],i,sum=0,c=0,min=100;
     scanf("%d",&n);
-    int i,sum=0,x,b,j=0,min=0;
-    
     for(i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
     }
-    scanf("
-%d %d",&x,&b);
+    scanf("%d%d",&p,&q);
     for(i=0;i<n;i++)
     {
-        if(a[i]==x)
+        if(a[i]>=p  && a[i]<=q)
         {
-            s[j]=a[i];
-            j++;
-        }
-        else if(a[i]>x && a[i]<=b)
-        {
-            s[j]=a[i];
-            j++;
-        }
-        else if (a[i]>b)
-        {
-            continue;
+            if(a[i]<min)
+            {
+                min=a[i];
+                c++;
+            }
         }
     }
-    if(j==0)
+    if(c!=0)
     {
-        printf("-1");
-        
+        printf("%d",min);  
     }
     else
-    { min=s[0];
-    for(i=1;i<j;i++)
     {
-        if(s[i]<min)
-        {
-            min=s[i];
-        }
+        printf("-1");
     }
-    {
-        printf("%d",min);
-    }
-    }
+   
+    
 }
