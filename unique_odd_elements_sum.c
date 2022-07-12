@@ -1,28 +1,26 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,j,a[100],sum=0;
+    int n;
     scanf("%d",&n);
+    int a[n],i,c,j,s=0;
     for(i=0;i<n;i++)
     {
         scanf("%d",&a[i]);
     }
     for(i=0;i<n;i++)
     {
-        for(j=0;j<n;j++)
+        for(j=i+1;j<n;j++)
         {
-            if(a[i]==a[j]&&i!=j)
+            if(a[i]==a[j])
             {
-                a[j]=1000;
+                a[j]=11111;
             }
         }
-        if(a[i]!=1000)
+        if(a[i]!=11111 && a[i]%2!=0)
         {
-            if(a[i]%2!=0)
-            {
-                sum+=a[i];
-            }
+            s+=a[i];
         }
     }
-    printf("%d",sum);
+    printf("%d",s);
 }
