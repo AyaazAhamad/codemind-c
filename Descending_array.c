@@ -1,20 +1,20 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,sum=0,arr[100],k=0;
+    int n,i,a[100],s=0;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&a[i]);
     }
-    for(i=0;i<n;i++)
+    for(i=0;i<n-1;i++)
     {
-        if(arr[i]>arr[i+1])
+        if(a[i]>a[i+1])
         {
-            k++;
+            s++;
         }
     }
-    if(k==n)
+    if(s==(n-1))
     {
         printf("yes");
     }
