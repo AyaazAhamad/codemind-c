@@ -1,26 +1,7 @@
 #include<stdio.h>
-int is_prime(int num)
-{
-    int i,p=0;
-    for(i=1;i<=num;i++)
-    {
-        if(num%i==0)
-        {
-            p++;
-        }
-    }
-    if(p==2)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
-}
 int main()
 {
-    int n,i,arr[100],k=0,c=0;
+    int arr[100],n,i,k,j,c=0,m=0;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
@@ -29,13 +10,21 @@ int main()
     scanf("%d",&k);
     for(i=0;i<n;i++)
     {
-        if(arr[i]<=k)
+        c=0;
+        for(j=1;j<=arr[i];j++)
         {
-            if(is_prime(arr[i]))
+            if(arr[i]%j==0)
             {
                 c++;
             }
         }
+        if(c==2)
+        {
+        if(arr[i]<=k)
+        {
+            m++;
+        }
+        }
     }
-    printf("%d",c);
+    printf("%d",m);
 }
