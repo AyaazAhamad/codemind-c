@@ -1,23 +1,24 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,arr[100],k,m,p=0;
+    int n,c,b,i,a[100],x=0;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&a[i]);
     }
-    scanf("%d%d",&k,&m);
+    scanf("%d%d",&b,&c);
     for(i=0;i<n;i++)
     {
-        if(arr[i]>=k && arr[i]<=m)
+        if(b<=a[i] && a[i]<=c || c<=a[i] && a[i]<=b)
         {
-            printf("%d ",arr[i]);
-            p=1;
+            printf("%d ",a[i]);
+            x++;
         }
     }
-    if(p==0)
+    if(x==0)
     {
         printf("-1");
     }
+   
 }
