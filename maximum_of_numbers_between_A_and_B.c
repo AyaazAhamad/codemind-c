@@ -1,59 +1,26 @@
-
 #include<stdio.h>
 int main()
 {
-    int n,a[100],s[100];
+    int n,a,b,ar[100],min=0,c=0;
     scanf("%d",&n);
-    int i,sum=0,x,b,j=0,max=0;
-    
-    for(i=0;i<n;i++)
+    for(int i=0;i<n;i++)
     {
-        scanf("%d",&a[i]);
+        scanf("%d",&ar[i]);
     }
-    scanf("
-%d %d",&x,&b);
-    for(i=0;i<n;i++)
+    scanf("%d%d",&a,&b);
+    for(int i=0;i<n;i++)
     {
-        if(a[i]<=x)
+        if(ar[i]>=a&&ar[i]<=b)
         {
-            continue;
-        }
-        else if(a[i]>x && a[i]<=b)
-        {
-            s[j]=a[i];
-            j++;
-        }
-        else if (a[i]==x || a[i]==b)
-        {
-            continue;
+          if(ar[i]>min)
+          {
+          min=ar[i];
+          c++;
+          }
         }
     }
-    if(j==0)
-    {
-        printf("-1");
-        return 0;
-    }
+    if(c==0)
+    printf("-1");
     else
-    { max=s[0];
-    for(i=1;i<j;i++)
-    {
-        if(s[i]>max)
-        {
-            max=s[i];
-        }
-    }
-    if(max==0)
-    {
-        printf("-1");
-    }
-    else
-    {
-        printf("%d",max);
-    }
-    }
+    printf("%d",min);
 }
-
-
-
-
-
